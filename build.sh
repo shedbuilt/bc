@@ -13,7 +13,7 @@ cp "${SHED_PKG_CONTRIB_DIR}/fix-libmath_h" "${SHED_PKG_SOURCE_DIR}/bc/" &&
             --mandir=/usr/share/man \
             --infodir=/usr/share/info &&
 make -j $SHED_NUM_JOBS &&
-make "DESTDIR=$SHED_FAKE_ROOT" install || exit 1
+make DESTDIR="$SHED_FAKE_ROOT" install || exit 1
 
 if [ -n "${SHED_PKG_LOCAL_OPTIONS[bootstrap]}" ]; then
     # Remove temporary symlinks
